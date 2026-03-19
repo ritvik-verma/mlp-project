@@ -25,3 +25,11 @@ Throw too many neurons at the problem
 Let training kill off the useless ones
 Keep what matters
 It's brute force, not elegant. CNNs, attention etc. exist precisely because people got tired of this wastefulness and started building structure into the network instead.
+
+Why initialize weight but not bias?
+Weight initialization gives the next layer a number of gradients that all can learn as many patterns. Initializing weight is enough to break symmetry so bias initialization is not mandatory.
+
+
+Weight initialization guide: https://ashutoshkriiest.medium.com/the-importance-of-weight-initialization-in-multi-layer-perceptron-mlp-for-artificial-intelligence-dbfc3d463b8e 
+
+
