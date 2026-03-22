@@ -1,24 +1,61 @@
-Typically more (wider) in the middle, then compress toward the end!
-Typical pattern
-Input:    784  (e.g. 28×28 image)
+# Network Width: Why Wide in the Middle, Narrow at the End
+
+## The Typical Pattern
+
+```
+Input:    784   (e.g. 28×28 image)
 Layer 1:  1024  ↑ expand
-Layer 2:  512   ↓ compress
-Layer 3:  256   ↓ compress
-Output:   10    (classes)
+Layer 2:   512  ↓ compress
+Layer 3:   256  ↓ compress
+Output:     10  (classes)
+```
 
-Why expand first?
-Remember your point — we need neurons to detect many different combinations of inputs. More neurons = more combinations can be represented simultaneously.
-784 input features → could have thousands of useful combinations
-→ expand so you have enough neurons to detect them all
+---
 
-Why compress later?
-Later layers are building higher level abstractions:
-Layer 1: 1024 neurons detecting edges, textures
-Layer 2: 512  neurons detecting shapes (fewer shapes than edges)
-Layer 3: 256  neurons detecting objects (fewer objects than shapes)
-Output:  10   final classes
-As you go deeper, concepts get more abstract and fewer in number.
+## Why Expand First?
 
-But there's no hard rule
+784 raw input features can combine into
+thousands of useful patterns. You need enough
+neurons to detect them all simultaneously.
 
-The layer size is a hyperparameter we tune. Too narrow = not enough combinations representable. Too wide = wasteful redundancy you identified. Finding the sweet spot is more art than science honestly.
+```
+784 pixels → edges, textures, gradients...
+→ expand so every combination has a neuron
+  that can potentially represent it
+```
+
+More neurons = more combinations the network
+can represent at once.
+
+---
+
+## Why Compress Later?
+
+Each layer builds higher-level abstractions,
+and higher-level concepts are fewer in number:
+
+```
+Layer 1: 1024 → edges, textures     (many)
+Layer 2:  512 → shapes              (fewer)
+Layer 3:  256 → objects             (fewer still)
+Output:    10 → final classes       (just 10)
+```
+
+As abstraction increases, the number of
+distinct concepts shrinks — so fewer neurons
+are needed.
+
+---
+
+## But There's No Hard Rule
+
+Layer size is a **hyperparameter** — you tune it.
+
+| Too narrow | Too wide |
+|---|---|
+| Can't represent enough combinations | Wasteful redundancy |
+| Underfitting | Slower, harder to train |
+
+Finding the sweet spot is more art than science.
+In practice: start with a known architecture,
+then adjust based on validation performance.
