@@ -80,3 +80,6 @@ Swish:   -0.14-0.27 0    0.73 2.86
 One line summary:
 ActivationCore ideaSigmoidCompress to 0-1TanhCompress to -1 to 1, zero centeredReLUKill negatives, keep positivesLeaky ReLUAlmost kill negativesELUSmoothly kill negativesSwishSelf-gated, smooth ReLUSoftplusSoft ReLU, never zeroSoftmaxTurn scores into probabilities
 Start with ReLU hidden + Softmax output for MNIST — then swap hidden activations and watch how accuracy and training speed change! 🎉
+
+
+Activation fucntions: https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/

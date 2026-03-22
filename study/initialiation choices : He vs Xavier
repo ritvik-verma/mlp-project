@@ -1,0 +1,126 @@
+He vs Xavier Activation function:
+
+Why is changing 1 to 2 significant ?
+
+👉 It changes the variance of activations flowing through layers
+👉 That directly affects vanishing vs exploding gradients
+
+
+🧠 What is being controlled?
+
+Each layer does:
+
+Z = XW
+
+We want:
+
+Var(Z) ≈ Var(X)
+
+So signal neither:
+
+shrinks ❌ (vanishing)
+
+blows up ❌ (exploding)
+
+
+🟢 Xavier (1/n)
+Var(W) = 1 / n
+
+Assumes:
+👉 activation keeps values symmetrically distributed
+
+Works for:
+
+tanh
+
+sigmoid
+
+
+🔵 He (2/n)
+Var(W) = 2 / n
+
+Why 2?
+
+Because ReLU does:
+
+ReLU(x) = max(0, x)
+
+➡️ kills ~50% of values
+
+So:
+
+Var(after ReLU) ≈ ½ Var(before)
+
+
+🔥 The key compensation
+
+He says:
+
+"Since ReLU halves variance, double it at initialization"
+
+So:
+
+½ × (2/n) = 1/n effective
+
+👉 variance stays stable
+
+
+⚡ What happens if you DON'T change 1 → 2?
+Using Xavier with ReLU:
+Var(W) = 1/n
+
+After ReLU:
+
+Var shrinks → shrinks → shrinks
+
+➡️ vanishing activations
+➡️ dead gradients
+➡️ slow or no learning
+
+Using He with ReLU:
+Var(W) = 2/n
+
+After ReLU:
+
+Var stays stable
+
+➡️ healthy signal flow
+
+
+🧪 Intuition (very important)
+
+Think of each layer as:
+
+signal × weight → passes through ReLU → loses half energy
+
+So:
+
+Xavier → doesn't compensate → signal dies
+
+He → compensates → signal survives
+
+
+🧠 Why this matters more in deep nets
+
+In 2 layers → small effect
+In 10 layers → huge effect
+
+Because:
+
+(½)^10 → almost zero
+
+
+🔥 Your mental model
+
+Initialization is about energy preservation across layers
+
+Xavier → assumes no energy loss
+
+He → corrects for ReLU energy loss
+
+
+TL;DR
+
+Xavier uses 1/n but He uses 2/n. ReLU kills ~50% of signal so this doubles variance to compensate and without it → activations shrink → gradients die
+
+

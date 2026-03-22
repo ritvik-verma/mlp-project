@@ -20,7 +20,5 @@ Output:  10   final classes
 As you go deeper, concepts get more abstract and fewer in number.
 
 But there's no hard rule
-ArchitecturePatternWhyTypical classifierwide middle, narrow endsextract then compressAutoencoderhourglass shapeforce compressionTransformerstays same widthdifferent design philosophyResNetvaries per blockskip connections change the game
 
-So your earlier instinct was right
 The layer size is a hyperparameter we tune. Too narrow = not enough combinations representable. Too wide = wasteful redundancy you identified. Finding the sweet spot is more art than science honestly.
