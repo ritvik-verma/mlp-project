@@ -1,0 +1,5 @@
+The "Easy Batch" Trap (Epoch 10)
+The final batch loss (0.129) was actually lower than the global training loss (~0.16).
+Initially, we assumed a "bad batch" meant a batch full of complicated or skewed examples that caused a massive error. But data shows the exact opposite happened — it was likely a "easy" batch.
+Here is why that breaks the global loss: Imagine a batch randomly ends up containing mostly 1s, 0s, and 7s (the easiest digits to draw and recognize). The model sees this batch, calculates a very low loss (0.129), and takes a confident step to optimize its weights even further for those specific numbers.
+However, by aggressively tweaking the weights to perfectly recognize those 1s and 0s, it accidentally overwrites the delicate weights it needed to recognize the harder digits (like 8s and 9s) in the rest of the dataset. So, when you step back and test the entire global dataset at the end of Epoch 10, the global loss spikes to 0.16 because the model temporarily "forgot" the hard numbers while over-optimizing for the easy batch.

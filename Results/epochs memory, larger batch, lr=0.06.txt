@@ -1,0 +1,15 @@
+Epoch = 1: Batch Loss = 0.16528487616585436, Accuracy on training data = 0.91198, Accuracy on Validation data = 0.9085
+Epoch = 2: Batch Loss = 0.09481002202013541, Accuracy on training data = 0.93924, Accuracy on Validation data = 0.9348
+Epoch = 3: Batch Loss = 0.08509382674731363, Accuracy on training data = 0.94734, Accuracy on Validation data = 0.9416
+Epoch = 4: Batch Loss = 0.0770941672781091, Accuracy on training data = 0.9638, Accuracy on Validation data = 0.9587
+Epoch = 5: Batch Loss = 0.07879368628147154, Accuracy on training data = 0.97124, Accuracy on Validation data = 0.9622
+Epoch = 6: Batch Loss = 0.06256009320246972, Accuracy on training data = 0.971, Accuracy on Validation data = 0.9634
+Epoch = 7: Batch Loss = 0.03341593338417681, Accuracy on training data = 0.97914, Accuracy on Validation data = 0.9683
+Epoch = 8: Batch Loss = 0.04327740506395994, Accuracy on training data = 0.9811, Accuracy on Validation data = 0.9696
+Epoch = 9: Batch Loss = 0.035933835350823985, Accuracy on training data = 0.97888, Accuracy on Validation data = 0.966
+Epoch = 10: Batch Loss = 0.04516118407392949, Accuracy on training data = 0.97382, Accuracy on Validation data = 0.9585
+Epoch = 11: Batch Loss = 0.014291298239374719, Accuracy on training data = 0.98918, Accuracy on Validation data = 0.976
+Epoch = 12: Batch Loss = 0.01628380660395965, Accuracy on training data = 0.989, Accuracy on Validation data = 0.9735
+Epoch = 13: Batch Loss = 0.041196340280016244, Accuracy on training data = 0.98954, Accuracy on Validation data = 0.9733
+Epoch = 14: Batch Loss = 0.015676522725303402, Accuracy on training data = 0.99054, Accuracy on Validation data = 0.9728
+Epoch = 15: Batch Loss = 0.031072413223555678, Accuracy on training data = 0.99216, Accuracy on Validation data = 0.9753
